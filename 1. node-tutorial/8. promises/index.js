@@ -1,5 +1,10 @@
 function delayFn(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
+    return new Promise(resolve => {
+        console.log('resolve : ', resolve);
+        setTimeout(() => {
+            resolve();
+        }, time);
+    });
 }
 
 console.log('Promise lecture starts');
@@ -18,4 +23,4 @@ function divideFn(num1, num2) {
 
 divideFn(10, 0)
     .then(result => console.log(result, 'res'))
-    .catch(error => console.log(error, 'err'));
+    .catch(error => console.log(error, ' == err'));
